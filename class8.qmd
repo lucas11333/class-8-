@@ -1,0 +1,31 @@
+---
+title: "fix the name"
+format: pdf
+---
+
+
+
+```{r}
+library(tidyverse)
+data <- read.csv(file = '/Users/lucas/Desktop/class8/table_219.csv')
+
+data
+```
+
+
+
+```{r}
+num_observations = 365
+data =
+  tibble(
+    date = seq(as.Date('2022/01/01'), as.Date('2022/12/31'), by="day"),
+    symbol = "SPX",
+    return = rnorm(
+      n = num_observations,
+      mean = 0,
+      sd = 0.01)
+  )
+
+data
+```
+
